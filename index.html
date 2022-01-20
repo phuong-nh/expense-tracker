@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expenses Tracker</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <section class="static">
+      <h1 class="heading__main">Expenses Tracker</h1>
+      <section id="dashboard">
+        <h2 class="heading__sub">YOUR BALANCE</h2>
+        <div class="balance__total">0</div>
+        <div id="balance">
+          <div id="income">
+            <h3 class="heading__paragraph">INCOME</h3>
+            <h3 class="positive" id="income-amount">0</h3>
+          </div>
+          <div id="expense">
+            <h3 class="heading__paragraph">EXPENSE</h3>
+            <h3 class="negative" id="expense-amount">0</h3>
+          </div>
+        </div>
+      </section>
+      <button class="button__create">➕ New transaction</button>
+    </section>
+    <section class="scrollable">
+      <h2 class="heading__sub">History</h2>
+      <ul id="tracking">
+        <li class="transaction">
+          <!-- <button class="transaction__info">
+            <span class="transaction__name">Marriage expenses</span>
+            <span class="transaction__amount positive">+5000.00</span>
+          </button>
+          <button class="transaction__delete"></button>
+        </li> -->
+      </ul>
+    </section>
+    <section class="popup hide">
+      <section id="create" hidden>
+        <h2 class="heading__sub">Add new transaction</h2>
+        <form action="#">
+          <ul>
+            <li class="create__form-item">
+              <label for="new-name">Name</label>
+              <br />
+              <input type="text" id="new-name" name="new-name" />
+            </li>
+            <li class="create__form-item">
+              <label for="new-amount">Amount</label>
+              <br />
+              <input type="text" id="new-amount" name="new-amount" />
+            </li>
+            <li class="create__form-item">
+              <label for="new-description">Description</label>
+              <br />
+              <textarea id="new-description" name="new-description"></textarea>
+            </li>
+            <li class="create__button">
+              <button type="button" id="cancel">Cancel</button>
+              <button type="button" id="add">Add</button>
+            </li>
+          </ul>
+        </form>
+      </section>
+      <section id="detail" hidden>
+        <h2 class="heading__sub">Marriage expenses</h2>
+        <h3 class="detail__amount positive">+5000</h3>
+        <p class="detail__description">Something...</p>
+        <button class="detail__close">❌ Close</button>
+      </section>
+    </section>
+  </body>
+</html>

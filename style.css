@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* //////////////////////////// */
+/* NORMALIZE */
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* //////////////////////////// */
+/* LAYOUT */
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fefefe;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23ccc' fill-opacity='0.4'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  font-family: Montserrat, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  display: flex;
+  /* align-items: center; */
+  overflow: hidden;
+}
+
+.popup {
+  top: 0vh;
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #292929c2;
+  transition: top .5s ease-in-out;
+}
+
+.popup.hide {
+  top: 100vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* //////////////////////////// */
+/* HEADING */
+.heading__main {
+  padding: 2rem;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+  border: #fefefe 1px solid;
+  text-align: center;
+}
+
+.heading__sub {
+  padding-top: 2rem;
+  font-weight: 400;
+  font-size: 1.8rem;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* //////////////////////////// */
+/* DASHBOARD */
+.static {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #292929;
+  color: white;
+}
+
+#dashboard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dashboard #balance {
+  display: flex;
+  background-color: #fefefe;
+  color: black;
+  border-radius: 0.5rem;
+  width: min(80%, 30rem);
+  height: 8rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#income,
+#expense {
+  text-align: center;
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+#income {
+  border-right: #ddd 2px solid;
+}
+
+.balance__total {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.button__create {
+  background-color: white;
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  margin: 1rem;
+}
+
+.button__create:hover {
+  background-color: #eee;
+}
+
+.button__create:active {
+  background-color: #ccc;
+}
+
+/* //////////////////////////// */
+/* HISTORY */
+.scrollable {
+  flex: 1;
+  padding: 0rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#history {
+  width: 100%;
+  /* background-color: #292929; */
+}
+
+#tracking {
+  flex: 1;
+  padding: 1rem;
+  list-style: none;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.transaction {
+  display: flex;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.transaction__info {
+  flex: 1;
+  background-color: #fefefe;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-family: inherit;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
+
+.transaction__info:hover {
+  background-color: #f9f9f9;
+}
+
+.transaction__info:active {
+  background-color: #eee;
+}
+
+.transaction__delete {
+  width: 3.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  margin-left: 1rem;
+  background-color: #fefefe;
+}
+
+.transaction__delete:hover {
+  background-color: rgb(255, 157, 157);
+}
+
+.transaction__delete:active {
+  background-color: rgb(255, 100, 100);
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+/* ////////////////////////////
+/* CREATE */
+#create {
+  background-color: white;
+  border-radius: .5rem;
+  padding: 0rem 5rem 2rem 5rem;
+}
+
+#create ul {
+  padding: 0;
+  list-style: none;
+}
+
+#create ul li {
+  padding-bottom: 1rem;
+}
+
+#create ul li label {
+  font-weight: 500;
+}
+
+#create ul li input,
+#create ul li textarea {
+  width: 100%;
+  resize: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+}
+
+#create ul li textarea {
+  height: 10rem;
+}
+
+#create ul li button {
+  background-color: #eee;
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+#create ul li button:hover {
+  background-color: #ddd;
+}
+
+#create ul li button:active {
+  background-color: #ccc;
+}
+
+/* //////////////////////////// */
+/* DETAIL */
+#detail {
+  background-color: white;
+  border-radius: .5rem;
+  padding: 0rem 5rem 2rem 5rem;
+  width: 60%;
+}
+
+#detail .detail__close {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #eee;
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+#detail .detail__close:hover {
+  background-color: #ddd;
+}
+
+#detail .detail__close:active {
+  background-color: #ccc;
+}
+
+#detail .heading__sub {
+  text-align: left;
+}
+
+#detail p {
+  overflow-wrap: normal;
+}
